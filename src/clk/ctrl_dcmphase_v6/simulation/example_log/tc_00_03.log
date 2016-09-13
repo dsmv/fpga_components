@@ -1,0 +1,86 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library 'C:\app\ahdl93\bin\systf.dll'
+# VHPI: Loading library 'systf.dll'
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 9927 kB (elbread=3071 elab2=6686 kernel=169 sdf=0)
+#  20:51, 13 сентября 2016 г.
+#  Simulation has been initialized
+#  Selected Top-Level: tc_00_03 (bhv)
+# Signal /tc_0/tb/dut/reset not found in design.
+# Signal /tc_0/tb/dut/clk_in not found in design.
+# Signal /tc_0/tb/dut/clk_out not found in design.
+# Signal /tc_0/tb/dut/din not found in design.
+# Signal /tc_0/tb/dut/dout not found in design.
+# Signal /tc_0/tb/dut/din0 not found in design.
+# Signal /tc_0/tb/dut/din1 not found in design.
+# Signal /tc_0/tb/dut/din2 not found in design.
+# Signal /tc_0/tb/dut/din3 not found in design.
+# Signal /tc_0/tb/dut/dout0 not found in design.
+# Signal /tc_0/tb/dut/dout1 not found in design.
+# Signal /tc_0/tb/dut/reset not found in design.
+# Signal /tc_0/tb/dut/clk_in not found in design.
+# Signal /tc_0/tb/dut/clk_out not found in design.
+# Signal /tc_0/tb/dut/din not found in design.
+# Signal /tc_0/tb/dut/dout not found in design.
+# Signal /tc_0/tb/dut/din0 not found in design.
+# Signal /tc_0/tb/dut/din1 not found in design.
+# Signal /tc_0/tb/dut/din2 not found in design.
+# Signal /tc_0/tb/dut/din3 not found in design.
+# Signal /tc_0/tb/dut/dout0 not found in design.
+# Signal /tc_0/tb/dut/dout1 not found in design.
+# KERNEL: Подстройка проведена      644400
+# KERNEL: time:     644400  shift: 0x0020
+# KERNEL: time:     659400  shift: 0x001F
+# KERNEL: time:     674400  shift: 0x0021
+# KERNEL: time:     689400  shift: 0x001F
+# KERNEL: time:     704400  shift: 0x001F
+# KERNEL: time:     719400  shift: 0x001F
+# KERNEL: time:     734400  shift: 0x001F
+# KERNEL: time:     749400  shift: 0x001F
+# KERNEL: time:     764400  shift: 0x001F
+# KERNEL: time:     779400  shift: 0x001F
+# KERNEL: time:     794400  shift: 0x001F
+# KERNEL: time:     809400  shift: 0x001F
+# KERNEL: time:     824400  shift: 0x001F
+# KERNEL: time:     839400  shift: 0x001F
+# KERNEL: time:     854400  shift: 0x001F
+# KERNEL: time:     869400  shift: 0x001F
+# KERNEL: time:     884400  shift: 0x001F
+# KERNEL: time:     899400  shift: 0x001F
+# KERNEL: time:     914400  shift: 0x001F
+# KERNEL: time:     929400  shift: 0x001F
+# KERNEL: time:     944400  shift: 0x001F
+# KERNEL: time:     959400  shift: 0x001F
+# KERNEL: time:     974400  shift: 0x001F
+# KERNEL: time:     989400  shift: 0x001F
+# KERNEL: time:    1004400  shift: 0x001F
+# KERNEL: time:    1019400  shift: 0x001F
+# KERNEL: time:    1034400  shift: 0x001F
+# KERNEL: time:    1049400  shift: 0x001F
+# KERNEL: time:    1064400  shift: 0x001F
+# KERNEL: time:    1079400  shift: 0x001F
+# KERNEL: time:    1094400  shift: 0x001F
+# KERNEL: time:    1109400  shift: 0x001F
+# KERNEL: 
+# KERNEL: 
+# KERNEL: TEST finished successfully
+# KERNEL: 
+# EXECUTION:: FAILURE: ... End of Testcase; Ending simulation (not a Failure)
+# EXECUTION:: Time: 1124400 ns,  Iteration: 0,  Instance: /tc_00_03/tc,  Process: pr_check.
+# KERNEL: stopped at delta: 0 at time 1124400 ns.
+#  Simulation has been stopped

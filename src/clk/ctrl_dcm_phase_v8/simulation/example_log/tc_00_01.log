@@ -1,0 +1,195 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library 'C:\app\ahdl93\bin\systf.dll'
+# VHPI: Loading library 'systf.dll'
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 9994 kB (elbread=3071 elab2=6740 kernel=182 sdf=0)
+#  21:04, 13 сентября 2016 г.
+#  Simulation has been initialized
+#  Selected Top-Level: tc_00_01 (bhv)
+# Signal /tc_00_02/tc/uut/reset not found in design.
+# Signal /tc_00_02/tc/uut/clk not found in design.
+# Signal /tc_00_02/tc/uut/clk_in not found in design.
+# Signal /tc_00_02/tc/uut/clk_fd not found in design.
+# Signal /tc_00_02/tc/uut/phase_tuning_disable not found in design.
+# Signal /tc_00_02/tc/uut/shift not found in design.
+# Signal /tc_00_02/tc/uut/clk_out not found in design.
+# Signal /tc_00_02/tc/uut/clk0_out not found in design.
+# Signal /tc_00_02/tc/uut/clk90 not found in design.
+# Signal /tc_00_02/tc/uut/clk180 not found in design.
+# Signal /tc_00_02/tc/uut/clk270 not found in design.
+# Signal /tc_00_02/tc/uut/clk2x not found in design.
+# Signal /tc_00_02/tc/uut/clk2x180 not found in design.
+# Signal /tc_00_02/tc/uut/clkdv not found in design.
+# Signal /tc_00_02/tc/uut/clkfx not found in design.
+# Signal /tc_00_02/tc/uut/locked not found in design.
+# Signal /tc_00_02/tc/uut/phase_locked not found in design.
+# Signal /tc_00_02/tc/uut/test not found in design.
+# Signal /tc_00_02/tc/uut/t45 not found in design.
+# Signal /tc_00_02/tc/uut/t46 not found in design.
+# Signal /tc_00_02/tc/uut/control0 not found in design.
+# Signal /tc_00_02/tc/uut/trig0 not found in design.
+# Signal /tc_00_02/tc/uut/clk_in0 not found in design.
+# Signal /tc_00_02/tc/uut/clkfb not found in design.
+# Signal /tc_00_02/tc/uut/clk0 not found in design.
+# Signal /tc_00_02/tc/uut/psen not found in design.
+# Signal /tc_00_02/tc/uut/psincdec not found in design.
+# Signal /tc_00_02/tc/uut/psdone not found in design.
+# Signal /tc_00_02/tc/uut/locked0 not found in design.
+# Signal /tc_00_02/tc/uut/reset_dcm not found in design.
+# Signal /tc_00_02/tc/uut/reset_ps not found in design.
+# Signal /tc_00_02/tc/uut/shift0 not found in design.
+# Signal /tc_00_02/tc/uut/cnt_interval not found in design.
+# Signal /tc_00_02/tc/uut/cnt_0 not found in design.
+# Signal /tc_00_02/tc/uut/cnt_1 not found in design.
+# Signal /tc_00_02/tc/uut/cnt_rst not found in design.
+# Signal /tc_00_02/tc/uut/cnt_reset not found in design.
+# Signal /tc_00_02/tc/uut/cnt_enable0 not found in design.
+# Signal /tc_00_02/tc/uut/cnt_enable1 not found in design.
+# Signal /tc_00_02/tc/uut/cnt_dec not found in design.
+# Signal /tc_00_02/tc/uut/cnt_dec_int not found in design.
+# Signal /tc_00_02/tc/uut/cnt_interval10_z not found in design.
+# Signal /tc_00_02/tc/uut/stp not found in design.
+# Signal /tc_00_02/tc/uut/cnt_0s not found in design.
+# Signal /tc_00_02/tc/uut/cnt_1s not found in design.
+# Signal /tc_00_02/tc/uut/reset_roc not found in design.
+# Signal /tc_00_02/tc/uut/reset_stp not found in design.
+# Signal /tc_00_02/tc/uut/clk_in_n not found in design.
+# Signal /tc_00_02/tc/uut/cnt0_x not found in design.
+# Signal /tc_00_02/tc/uut/clk_in_z not found in design.
+# Signal /tc_00_02/tc/uut/shift_max not found in design.
+# Signal /tc_00_02/tc/uut/shift_min not found in design.
+# Signal /tc_00_02/tc/uut/change_clk not found in design.
+# Signal /tc_00_02/tc/uut/change_clk_z not found in design.
+# Signal /tc_00_02/tc/uut/sel_clk not found in design.
+# Signal /tc_00_02/tc/uut/clkb not found in design.
+# Signal /tc_00_02/tc/uut/clk_in_change not found in design.
+# Signal /tc_00_02/tc/uut/clk_fd_z not found in design.
+# Signal /tc_00_02/tc/uut/pl_enable not found in design.
+# Signal /tc_00_02/tc/uut/pl_psincdec not found in design.
+# Signal /tc_00_02/tc/uut/pl_cnt not found in design.
+# Signal /tc_00_02/tc/uut/pht_dis not found in design.
+# Signal /tc_00_03/tc/uut/reset not found in design.
+# Signal /tc_00_03/tc/uut/clk not found in design.
+# Signal /tc_00_03/tc/uut/clk_in not found in design.
+# Signal /tc_00_03/tc/uut/clk_fd not found in design.
+# Signal /tc_00_03/tc/uut/phase_tuning_disable not found in design.
+# Signal /tc_00_03/tc/uut/shift not found in design.
+# Signal /tc_00_03/tc/uut/clk_out not found in design.
+# Signal /tc_00_03/tc/uut/clk0_out not found in design.
+# Signal /tc_00_03/tc/uut/clk90 not found in design.
+# Signal /tc_00_03/tc/uut/clk180 not found in design.
+# Signal /tc_00_03/tc/uut/clk270 not found in design.
+# Signal /tc_00_03/tc/uut/clk2x not found in design.
+# Signal /tc_00_03/tc/uut/clk2x180 not found in design.
+# Signal /tc_00_03/tc/uut/clkdv not found in design.
+# Signal /tc_00_03/tc/uut/clkfx not found in design.
+# Signal /tc_00_03/tc/uut/locked not found in design.
+# Signal /tc_00_03/tc/uut/phase_locked not found in design.
+# Signal /tc_00_03/tc/uut/test not found in design.
+# Signal /tc_00_03/tc/uut/t45 not found in design.
+# Signal /tc_00_03/tc/uut/t46 not found in design.
+# Signal /tc_00_03/tc/uut/control0 not found in design.
+# Signal /tc_00_03/tc/uut/trig0 not found in design.
+# Signal /tc_00_03/tc/uut/clk_in0 not found in design.
+# Signal /tc_00_03/tc/uut/clkfb not found in design.
+# Signal /tc_00_03/tc/uut/clk0 not found in design.
+# Signal /tc_00_03/tc/uut/psen not found in design.
+# Signal /tc_00_03/tc/uut/psincdec not found in design.
+# Signal /tc_00_03/tc/uut/psdone not found in design.
+# Signal /tc_00_03/tc/uut/locked0 not found in design.
+# Signal /tc_00_03/tc/uut/reset_dcm not found in design.
+# Signal /tc_00_03/tc/uut/reset_ps not found in design.
+# Signal /tc_00_03/tc/uut/shift0 not found in design.
+# Signal /tc_00_03/tc/uut/cnt_interval not found in design.
+# Signal /tc_00_03/tc/uut/cnt_0 not found in design.
+# Signal /tc_00_03/tc/uut/cnt_1 not found in design.
+# Signal /tc_00_03/tc/uut/cnt_rst not found in design.
+# Signal /tc_00_03/tc/uut/cnt_reset not found in design.
+# Signal /tc_00_03/tc/uut/cnt_enable0 not found in design.
+# Signal /tc_00_03/tc/uut/cnt_enable1 not found in design.
+# Signal /tc_00_03/tc/uut/cnt_dec not found in design.
+# Signal /tc_00_03/tc/uut/cnt_dec_int not found in design.
+# Signal /tc_00_03/tc/uut/cnt_interval10_z not found in design.
+# Signal /tc_00_03/tc/uut/stp not found in design.
+# Signal /tc_00_03/tc/uut/cnt_0s not found in design.
+# Signal /tc_00_03/tc/uut/cnt_1s not found in design.
+# Signal /tc_00_03/tc/uut/reset_roc not found in design.
+# Signal /tc_00_03/tc/uut/reset_stp not found in design.
+# Signal /tc_00_03/tc/uut/clk_in_n not found in design.
+# Signal /tc_00_03/tc/uut/cnt0_x not found in design.
+# Signal /tc_00_03/tc/uut/clk_in_z not found in design.
+# Signal /tc_00_03/tc/uut/shift_max not found in design.
+# Signal /tc_00_03/tc/uut/shift_min not found in design.
+# Signal /tc_00_03/tc/uut/change_clk not found in design.
+# Signal /tc_00_03/tc/uut/change_clk_z not found in design.
+# Signal /tc_00_03/tc/uut/sel_clk not found in design.
+# Signal /tc_00_03/tc/uut/clkb not found in design.
+# Signal /tc_00_03/tc/uut/clk_in_change not found in design.
+# Signal /tc_00_03/tc/uut/clk_fd_z not found in design.
+# Signal /tc_00_03/tc/uut/pl_enable not found in design.
+# Signal /tc_00_03/tc/uut/pl_psincdec not found in design.
+# Signal /tc_00_03/tc/uut/pl_cnt not found in design.
+# Signal /tc_00_03/tc/uut/pht_dis not found in design.
+# Signal /tc_00_03/tc/uut/clk_in not found in design.
+# Signal /tc_00_03/tc/uut/clk_out not found in design.
+# Signal /tc_00_03/tc/uut/psen not found in design.
+# Signal /tc_00_03/tc/uut/psincdec not found in design.
+# Signal /tc_00_03/tc/uut/clk_fd_z not found in design.
+# Signal /tc_00_03/tc/uut/phase_locked not found in design.
+# Signal /tc_00_03/tc/uut/shift0 not found in design.
+# KERNEL: Подстройка проведена      492200
+# KERNEL: time:     492200  shift: 0x00C8
+# KERNEL: time:     507200  shift: 0x00C8
+# KERNEL: time:     522200  shift: 0x00C8
+# KERNEL: time:     537200  shift: 0x00C8
+# KERNEL: time:     552200  shift: 0x00C8
+# KERNEL: time:     567200  shift: 0x00C7
+# KERNEL: time:     582200  shift: 0x00C8
+# KERNEL: time:     597200  shift: 0x00C8
+# KERNEL: time:     612200  shift: 0x00C7
+# KERNEL: time:     627200  shift: 0x00C8
+# KERNEL: time:     642200  shift: 0x00C7
+# KERNEL: time:     657200  shift: 0x00C8
+# KERNEL: time:     672200  shift: 0x00C8
+# KERNEL: time:     687200  shift: 0x00C8
+# KERNEL: time:     702200  shift: 0x00C8
+# KERNEL: time:     717200  shift: 0x00C8
+# KERNEL: time:     732200  shift: 0x00C8
+# KERNEL: time:     747200  shift: 0x00C8
+# KERNEL: time:     762200  shift: 0x00C7
+# KERNEL: time:     777200  shift: 0x00C8
+# KERNEL: time:     792200  shift: 0x00C8
+# KERNEL: time:     807200  shift: 0x00C8
+# KERNEL: time:     822200  shift: 0x00C8
+# KERNEL: time:     837200  shift: 0x00C8
+# KERNEL: time:     852200  shift: 0x00C8
+# KERNEL: time:     867200  shift: 0x00C8
+# KERNEL: time:     882200  shift: 0x00C8
+# KERNEL: time:     897200  shift: 0x00C8
+# KERNEL: time:     912200  shift: 0x00C8
+# KERNEL: time:     927200  shift: 0x00C8
+# KERNEL: time:     942200  shift: 0x00C7
+# KERNEL: time:     957200  shift: 0x00C8
+# KERNEL: 
+# KERNEL: 
+# KERNEL: TEST finished successfully
+# KERNEL: 
+# EXECUTION:: FAILURE: ... End of Testcase; Ending simulation (not a Failure)
+# EXECUTION:: Time: 972200 ns,  Iteration: 0,  Instance: /tc_00_01/tc,  Process: pr_check.
+# KERNEL: stopped at delta: 0 at time 972200 ns.
+#  Simulation has been stopped

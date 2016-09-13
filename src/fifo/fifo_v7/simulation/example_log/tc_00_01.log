@@ -1,0 +1,297 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.2 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library 'C:\app\ahdl93\bin\systf.dll'
+# VHPI: Loading library 'systf.dll'
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 10311 kB (elbread=1024 elab2=8619 kernel=667 sdf=0)
+#  20:47, 13 сентября 2016 г.
+#  Simulation has been initialized
+#  Selected Top-Level: tc_00_01 (bhv)
+# EXECUTION:: NOTE   : Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior.
+# EXECUTION:: Time: 5 ns,  Iteration: 0,  Instance: /tc_00_01/tc/fifo/fifo8192/fifo/dpram/U0,  Process: line__1168.
+# KERNEL: FIFO 0 - PKG=  1        6604 ns          0 ns ERROR:          0  SPEED:          0
+# KERNEL: FIFO 0 - PKG=  2       12652 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=  3       18700 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=  4       24748 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=  5       30796 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=  6       36844 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=  7       42892 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=  8       48940 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=  9       54988 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 10       61036 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 11       67084 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 12       73132 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 13       79180 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 14       85228 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 15       91276 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 16       97324 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 17      103372 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 18      109420 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 19      115468 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 20      121516 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 21      127564 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 22      133612 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 23      139660 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 24      145708 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 25      151756 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 26      157804 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 27      163852 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 28      169900 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 29      175948 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 30      181996 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 31      188044 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 32      194092 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 33      200140 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 34      206188 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 35      212236 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 36      218284 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 37      224332 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 38      230380 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 39      236428 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 40      242476 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 41      248524 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 42      254572 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 43      260620 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 44      266668 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 45      272716 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 46      278764 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 47      284812 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 48      290860 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 49      296908 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 50      302956 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 51      309004 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 52      315052 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 53      321100 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 54      327148 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 55      333196 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 56      339244 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 57      345292 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 58      351340 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 59      357388 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 60      363436 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 61      369484 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 62      375532 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 63      381580 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 64      387628 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 65      393676 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 66      399724 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 67      405772 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 68      411820 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 69      417868 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 70      423916 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 71      429964 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 72      436012 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 73      442060 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 74      448108 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 75      454156 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 76      460204 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 77      466252 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 78      472300 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 79      478348 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 80      484396 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 81      490444 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 82      496492 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 83      502540 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 84      508588 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 85      514636 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 86      520684 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 87      526732 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 88      532780 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 89      538828 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 90      544876 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 91      550924 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 92      556972 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 93      563020 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 94      569068 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 95      575116 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 96      581164 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 97      587212 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 98      593260 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG= 99      599308 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=100      605356 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=101      611404 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=102      617452 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=103      623500 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=104      629548 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=105      635596 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=106      641644 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=107      647692 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=108      653740 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=109      659788 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=110      665836 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=111      671884 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=112      677932 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=113      683980 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=114      690028 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=115      696076 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=116      702124 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=117      708172 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=118      714220 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=119      720268 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=120      726316 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=121      732364 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=122      738412 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=123      744460 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=124      750508 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=125      756556 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=126      762604 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=127      768652 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=128      774700 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=129      780748 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=130      786796 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=131      792844 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=132      798892 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=133      804940 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=134      810988 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=135      817036 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=136      823084 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=137      829132 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=138      835180 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=139      841228 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=140      847276 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=141      853324 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=142      859372 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=143      865420 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=144      871468 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=145      877516 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=146      883564 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=147      889612 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=148      895660 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=149      901708 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=150      907756 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=151      913804 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=152      919852 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=153      925900 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=154      931948 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=155      937996 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=156      944044 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=157      950092 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=158      956140 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=159      962188 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=160      968236 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=161      974284 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=162      980332 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=163      986380 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=164      992428 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=165      998476 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=166     1004524 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=167     1010572 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=168     1016620 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=169     1022668 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=170     1028716 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=171     1034764 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=172     1040812 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=173     1046860 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=174     1052908 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=175     1058956 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=176     1065004 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=177     1071052 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=178     1077100 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=179     1083148 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=180     1089196 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=181     1095244 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=182     1101292 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=183     1107340 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=184     1113388 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=185     1119436 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=186     1125484 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=187     1131532 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=188     1137580 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=189     1143628 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=190     1149676 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=191     1155724 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=192     1161772 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=193     1167820 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=194     1173868 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=195     1179916 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=196     1185964 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=197     1192012 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=198     1198060 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=199     1204108 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=200     1210156 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=201     1216204 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=202     1222252 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=203     1228300 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=204     1234348 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=205     1240396 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=206     1246444 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=207     1252492 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=208     1258540 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=209     1264588 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=210     1270636 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=211     1276684 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=212     1282732 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=213     1288780 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=214     1294828 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=215     1300876 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=216     1306924 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=217     1312972 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=218     1319020 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=219     1325068 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=220     1331116 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=221     1337164 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=222     1343212 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=223     1349260 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=224     1355308 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=225     1361356 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=226     1367404 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=227     1373452 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=228     1379500 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=229     1385548 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=230     1391596 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=231     1397644 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=232     1403692 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=233     1409740 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=234     1415788 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=235     1421836 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=236     1427884 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=237     1433932 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=238     1439980 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=239     1446028 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=240     1452076 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=241     1458124 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=242     1464172 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=243     1470220 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=244     1476268 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=245     1482316 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=246     1488364 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=247     1494412 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=248     1500460 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=249     1506508 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=250     1512556 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=251     1518604 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=252     1524652 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=253     1530700 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=254     1536748 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=255     1542796 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: FIFO 0 - PKG=256     1548844 ns       6048 ns ERROR:          0  SPEED:       1292
+# KERNEL: Завершён приём данных:     1549200 ns
+# KERNEL: FIFO 0 
+# KERNEL:  Принято пакетов:    256
+# KERNEL:  Правильных:         256
+# KERNEL:  Ошибочных:          0
+# KERNEL:  Общее число ошибок: 0
+# KERNEL:  Скорость передачи:        1292 МБайт/с
+# KERNEL: 
+# KERNEL: 
+# KERNEL: 
+# KERNEL: TEST finished successfully
+# KERNEL: 
+# EXECUTION:: FAILURE: ... End of Testcase; Ending simulation (not a Failure)
+# EXECUTION:: Time: 1549200 ns,  Iteration: 0,  Instance: /tc_00_01/tc,  Process: pr_rx_data.
+# KERNEL: stopped at delta: 0 at time 1549200 ns.
+#  Simulation has been stopped
