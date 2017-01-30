@@ -352,7 +352,7 @@ pr_rd: process( rd_clk ) begin
 end process;
 
 dout_we0 <= '1';
-dout_we1 <= '1';
+dout_we1 <= data_rd after 1 ns when rising_edge( rd_clk ) ;
 
 pr_r_underflow: process( rd_clk ) begin
 	if( rst2='1' ) then
