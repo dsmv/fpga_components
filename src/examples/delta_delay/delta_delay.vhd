@@ -61,10 +61,10 @@ clk2 <= clk1; -- вот в этом проблема, не надо так делать без крайней необходимос
 
 --- Вариант 1 - Синтезируемая часть без задержек  ---
 
---
---b <= a when rising_edge( clk1 );
---c <= b when rising_edge( clk1 );
---d <= b when rising_edge( clk2 );
+
+b <= a when rising_edge( clk1 );
+c <= b when rising_edge( clk1 );
+d <= b when rising_edge( clk2 );
 
 
 --- Вариант 2 - Синтезируемая часть с задержеками  ---
@@ -76,8 +76,8 @@ clk2 <= clk1; -- вот в этом проблема, не надо так делать без крайней необходимос
 
 
 --- Вариант 3 - Синтезируемая часть без задержек но с переназначением сигнала через alias  ---
-b <= a when rising_edge( clk1 );
-c <= b when rising_edge( clk1 );
-d <= b when rising_edge( clk3 );
+--b <= a when rising_edge( clk1 );
+--c <= b when rising_edge( clk1 );
+--d <= b when rising_edge( clk3 );
 
 end delta_delay;
