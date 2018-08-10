@@ -5,12 +5,19 @@
 -- Company     : Instrumental Systems
 -- E-mail      : dsmv@insys.ru
 --
--- Version     : 1.0
+-- Version     : 1.1
 --
 -------------------------------------------------------------------------------
 --
 -- Description : Узел управления FIFO с ретрансмитом
 --														 
+--
+-------------------------------------------------------------------------------
+--
+--  Version    1.1	02.10.2017
+--			   
+--             Исправлена задержка выдачи данных
+--             Данные появляются на второй такт от data_rd              
 --
 -------------------------------------------------------------------------------
 --
@@ -352,7 +359,7 @@ pr_rd: process( rd_clk ) begin
 end process;
 
 dout_we0 <= '1';
-dout_we1 <= data_rd after 1 ns when rising_edge( rd_clk ) ;
+dout_we1 <= data_rd after 1 ns when rising_edge( rd_clk );
 
 pr_r_underflow: process( rd_clk ) begin
 	if( rst2='1' ) then

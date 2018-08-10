@@ -126,8 +126,8 @@ pr_rd: process( clkb ) begin
 	end if;
 end process;
 
---doutb <= data_o after 0.5 ns when rising_edge( clkb );
-doutb <= data_o;
+doutb <= data_o after 0.5 ns when rising_edge( clkb );
+--doutb <= data_o;
 
 pr_wr: process( clka ) begin
 	if( rising_edge( clka ) ) then
