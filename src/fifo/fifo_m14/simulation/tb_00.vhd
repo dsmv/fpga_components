@@ -79,7 +79,10 @@ signal data_in 			: std_logic_vector( 63 downto 0 ):=x"0A00000000000000"; -- дан
 signal data_en			: std_logic;			-- 1 - запись в fifo
 signal flag_wr			: bl_fifo_flag;		-- флаги fifo, синхронно с clk_wr
 signal cnt_wr			: std_logic_vector( 15 downto 0 ); -- счётчик слов
- 
+
+signal f14_cnt_wr			: std_logic_vector( 18 downto 0 ); -- счётчик слов
+signal f14_cnt_rd			: std_logic_vector( 18 downto 0 ); -- счётчик слов
+
  -- чтение
 signal clk_rd 			: std_logic:='0';			-- тактовая частота
 signal data_out 		: std_logic_vector( 63 downto 0 );   -- данные
@@ -190,14 +193,14 @@ fifo_14: cl_fifo_m14
 		 data_in 			=> data_in, 	-- данные
 		 data_en			=> data_en,		-- 1 - запись в fifo
 		 flag_wr			=> flag_wr,		-- флаги fifo, синхронно с clk_wr
-		 cnt_wr				=> cnt_wr,		-- счётчик слов
+		 cnt_wr				=> f14_cnt_wr,		-- счётчик слов
 		 
 		 -- чтение
 		 clk_rd 			=> clk_rd,		-- тактовая частота
 		 data_out 			=> data_out,	-- данные
 		 data_cs			=> data_cs,		-- 0 - чтение из fifo
 		 flag_rd			=> flag_rd,		-- флаги fifo, синхронно с clk_rd
-		 cnt_rd				=> cnt_rd,			-- счётчик слов
+		 cnt_rd				=> f14_cnt_rd,			-- счётчик слов
 
 		 
 		 rt					=> rt,			-- 1 - переход на начало в произвольный момент
