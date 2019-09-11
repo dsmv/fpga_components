@@ -13,6 +13,12 @@
 --
 -------------------------------------------------------------------------------
 --
+--  Version    1.1	02.10.2017
+--
+--              Максимальный размер увеличен до 256К
+--
+---------------------------------------------------------------------------------
+--
 --  Version    1.0   14.03.2017
 --			
 -------------------------------------------------------------------------------
@@ -31,12 +37,12 @@ component ctrl_dpram_m14 is
 	port (
 		clka		: in std_logic;
 		wea			: in std_logic;
-		addra		: in std_logic_vector(15 downto 0);
+		addra		: in std_logic_vector(18 downto 0);
 		dina		: in std_logic_vector(DATA_WIDTH-1 downto 0);
 		clkb		: in std_logic;
 		rstb		: in std_logic;			  
 		enb			: IN std_logic;
-		addrb		: in std_logic_vector(15 downto 0);
+		addrb		: in std_logic_vector(18 downto 0);
 		doutb		: out std_logic_vector(DATA_WIDTH-1 downto 0)
 	);
 end component;
@@ -55,6 +61,8 @@ variable	ret	: integer:=0;
 begin
 
 	case( DATA_DEPTH ) is
+		when 16		=> ret:=4;	
+		when 32		=> ret:=5;	
 		when 64		=> ret:=6;	
 		when 128	=> ret:=7;	
 		when 256	=> ret:=8;	
@@ -66,7 +74,8 @@ begin
 		when 16384	=> ret:=14;	
 		when 32768	=> ret:=15;	
 		when 65536	=> ret:=16;	
-		
+		when 131072	=> ret:=17;	
+		when 262144	=> ret:=18;			
 		when others =>
 			assert FALSE report "DATA_DEPTH has incorrect value" severity FAILURE;
 	end case;
@@ -92,12 +101,12 @@ entity ctrl_dpram_m14 is
 	port (
 		clka		: in std_logic;
 		wea			: in std_logic;
-		addra		: in std_logic_vector(15 downto 0);
+		addra		: in std_logic_vector(18 downto 0);
 		dina		: in std_logic_vector(DATA_WIDTH-1 downto 0);
 		clkb		: in std_logic;
 		rstb		: in std_logic;			  
 		enb			: IN std_logic;
-		addrb		: in std_logic_vector(15 downto 0);
+		addrb		: in std_logic_vector(18 downto 0);
 		doutb		: out std_logic_vector(DATA_WIDTH-1 downto 0)
 	);
 end ctrl_dpram_m14;
@@ -115,7 +124,7 @@ constant	ADR_SIZE	: integer:= get_adr_size( DATA_DEPTH );
 signal	data_o			: std_logic_vector(DATA_WIDTH-1 downto 0);
 signal	enb_z			: std_logic;
 
-signal	addrb_z			: std_logic_vector( 15 downto 0 );
+signal	addrb_z			: std_logic_vector( 18 downto 0 );
 
 begin
 	

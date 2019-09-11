@@ -5,7 +5,7 @@
 -- Company     : Instrumental Systems
 -- E-mail      : dsmv@mail.ru
 --
--- Version     : 1.1
+-- Version     : 1.2
 --
 -------------------------------------------------------------------------------
 --
@@ -14,6 +14,12 @@
 --														 
 --
 -------------------------------------------------------------------------------
+--
+--  Version    1.2	02.10.2017
+--
+--              Максимальный размер увеличен до 256К
+--
+---------------------------------------------------------------------------------
 --
 --  Version    1.1   11.09.2009
 --				Добавлен выход empty
@@ -33,7 +39,6 @@ use ieee.std_logic_unsigned.all;
 use work.adm2_pkg.all;			
 
 use work.ctrl_retack_counter_m14_pkg.all;
-use work.ctrl_dpram_m14_pkg.all;
 
 entity cl_fifo_control_m14 is
 	generic (					 
@@ -50,11 +55,11 @@ entity cl_fifo_control_m14 is
 		flag_wr			: out bl_fifo_flag;	-- флаги fifo, синхронно с clk_wr
 		flag_rd			: out bl_fifo_flag;	-- флаги fifo, синхронно с clk_rd
 		
-		addra			: out std_logic_vector( 15 downto 0);	-- адрес записи
-		addrb			: out std_logic_vector( 15 downto 0);	-- адрес чтеия	 
+		addra			: out std_logic_vector( 18 downto 0);	-- адрес записи
+		addrb			: out std_logic_vector( 18 downto 0);	-- адрес чтеия	 
 		
-		cnt_wr			: out std_logic_vector( 15 downto 0 ); -- счётчик слов
-		cnt_rd			: out std_logic_vector( 15 downto 0 ); -- счётчик слов		
+		cnt_wr			: out std_logic_vector( 18 downto 0 ); -- счётчик слов
+		cnt_rd			: out std_logic_vector( 18 downto 0 ); -- счётчик слов		
 		
 		data_en			: in std_logic;		-- 1 - запись в fifo
 		data_cs			: in std_logic;		-- 0 - чтение из fifo
@@ -71,6 +76,37 @@ entity cl_fifo_control_m14 is
 end cl_fifo_control_m14;		
 
 architecture cl_fifo_control_m14 of cl_fifo_control_m14 is
+
+
+function get_adr_size( DATA_DEPTH	: in integer ) return integer is
+
+variable	ret	: integer:=0;
+
+begin
+
+	case( DATA_DEPTH ) is
+		when 16		=> ret:=4;	
+		when 32		=> ret:=5;	
+		when 64		=> ret:=6;	
+		when 128	=> ret:=7;	
+		when 256	=> ret:=8;	
+		when 512	=> ret:=9;	
+		when 1024 	=> ret:=10;	
+		when 2048	=> ret:=11;	
+		when 4096	=> ret:=12;	
+		when 8192	=> ret:=13;	
+		when 16384	=> ret:=14;	
+		when 32768	=> ret:=15;	
+		when 65536	=> ret:=16;	
+		when 131072	=> ret:=17;	
+		when 262144	=> ret:=18;			
+		when others =>
+			assert FALSE report "DATA_DEPTH has incorrect value" severity FAILURE;
+	end case;
+	
+	return ret;
+	
+end function;	
 
 constant  counter_width			: integer := get_adr_size( FIFO_SIZE );
 
@@ -239,8 +275,8 @@ r_cnt <= w_adr_to_r - r_adr after 1 ns when rising_edge( rd_clk );
 cnt_wr( counter_width-1 downto 0 ) <= w_cnt;
 cnt_rd( counter_width-1 downto 0 ) <= r_cnt;
 
-cnt_wr( 15 downto counter_width ) <= (others=>'0');
-cnt_rd( 15 downto counter_width ) <= (others=>'0');
+cnt_wr( 18 downto counter_width ) <= (others=>'0');
+cnt_rd( 18 downto counter_width ) <= (others=>'0');
 
 flag_wr.paf <= flag_wri_paf;
 
@@ -300,8 +336,8 @@ end process;
 addra( counter_width-1 downto 0 ) <= w_adr;
 addrb( counter_width-1 downto 0 ) <= r_adr;
 
-addra( 15 downto counter_width ) <= (others=>'0');
-addrb( 15 downto counter_width ) <= (others=>'0');
+addra( 18 downto counter_width ) <= (others=>'0');
+addrb( 18 downto counter_width ) <= (others=>'0');
 
 
 

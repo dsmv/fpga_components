@@ -5,12 +5,17 @@
 -- Company     : Instrumental Systems
 -- E-mail      : dsmv@mail.ru
 --
--- Version     : 1.0
+-- Version     : 1.1
 --
 -------------------------------------------------------------------------------
 --
 -- Description : Узел двухпортовой памяти с настраиваемыми параметрами 
 --
+-------------------------------------------------------------------------------
+--
+--  Version    1.1   28.06.2019
+--				Зафиксировано исправление выхода данных
+--			
 -------------------------------------------------------------------------------
 --
 --  Version    1.0   29.01.2017
@@ -120,14 +125,11 @@ begin
 	
 pr_rd: process( clkb ) begin
 	if( rising_edge( clkb ) ) then
-		--if( enb='1' ) then
 			data_o <= Mem(conv_integer( addrb( ADR_SIZE-1 downto 0 ) ) );
-		--end if;
 	end if;
 end process;
 
-doutb <= data_o after 0.5 ns when rising_edge( clkb );
---doutb <= data_o;
+doutb <= data_o;
 
 pr_wr: process( clka ) begin
 	if( rising_edge( clka ) ) then
