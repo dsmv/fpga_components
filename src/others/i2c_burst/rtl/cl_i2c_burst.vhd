@@ -106,7 +106,7 @@ signal	data_rd_z				: std_logic;
 type	stp_type				is ( s0, s1, s2, s3, s4, s5, s6, s7, s8 );
 signal	stp						: stp_type;
 
-type	stw_type				is ( s0, s1, s2, s3_0, s4_1, s3, s4, s5, s6, s7, s8, s9 );
+type	stw_type				is ( s0, s1, s2, s3_0, s4_1, s3, s4, s5, s6, s6_1, s7, s8, s9 );
 signal	stw						: stw_type;
 
 signal i2c_ack_z				: std_logic;
@@ -351,7 +351,7 @@ pr_stw: process( clk ) begin
 					end if;
 				end if;			
 				
-				if( tz_stop_req='1' ) then
+				if( tz_stop_req='1' and clk_step_0='1' ) then
 					stw <= s7 after 1 ns;
 				end if;
 					
@@ -441,7 +441,14 @@ pr_stw: process( clk ) begin
 				
 			when s6 => 	  	
 				fo_data_we <= '0' after 1 ns;
-				first_byte <= '0' after 1 ns;
+				first_byte <= '0' after 1 ns;			   
+				if( clk_step_f='1' ) then
+					scl_o <= '0' after 1 ns;
+					stw <= s6_1 after 1 ns;
+				end if;
+				
+				
+			when s6_1 =>
 				tz_send_complete <= '1' after 1 ns;
 				if( tz_send_req='0' ) then
 					stw <= s0 after 1 ns;
@@ -449,7 +456,8 @@ pr_stw: process( clk ) begin
 				
 			when s7 => --- STOP ---
 				sda_o <= '0' after 1 ns;
-				if( clk_step_1='1' ) then
+				if( clk_step_r='1' ) then
+					scl_o <= '1' after  1 ns;
 					stw <= s8 after 1 ns;
 				end if;
 				

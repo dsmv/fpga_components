@@ -34,7 +34,7 @@ entity stend_i2c is
 	generic(
 	 	test_id             : in integer:=-1;	-- идентификатор теста
         stend_name          : in string:="stend_i2c";	-- имя стенда
-        test_log            : in string:="../../../../../src/others/i2c_burst/simulation/log/"    -- путь к файлу отчёта
+        test_log            : in string:="src/others/i2c_burst/simulation/log/"    -- путь к файлу отчёта
     );
 end stend_i2c;
 
