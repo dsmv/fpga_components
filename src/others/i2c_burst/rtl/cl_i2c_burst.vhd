@@ -23,7 +23,7 @@
 --			7..0:	DATA:	байт данных
 --			11..8:	CNT:	номер байта
 --			12:		DATA_ACK	- занчение бита ACK
---			13:		PAF:		- 1 - разрешение передачи 16-ти байт
+--			13:		PAF:		- 1 - разрешение передачи одного байта
 --			14:		RUN:		- 1 - выполнение транзакции
 --			15:		GRANT_BUS:	- 1 - разрешение доступа к шине
 --			31..16: SIG:		- 0x12C0 - сигнатура, признак наличия узла
@@ -83,7 +83,7 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 library work;
-use work.cl_fifo_m12_pkg.all;	 
+--use work.cl_fifo_m12_pkg.all;	 
 use work.adm2_pkg.all;
 
 architecture cl_i2c_burst of cl_i2c_burst is
@@ -96,6 +96,7 @@ signal	reg_rstp				: std_logic;
 signal	fi_flag_wr 				: bl_fifo_flag;
 signal	fi_flag_rd  			: bl_fifo_flag;
 signal	fi_data					: std_logic_vector( 15 downto 0 );    	
+signal	fi_data_i				: std_logic_vector( 15 downto 0 );    	
 signal	fi_fifo_rd				: std_logic; 
 
 signal	data_i_rp				: std_logic_vector( 15 downto 0 );
@@ -152,6 +153,8 @@ signal	fo_data_rd					: std_logic;
 signal	first_bit 					: std_logic;
 signal	sda_i_z						: std_logic;
 
+
+
 begin
 	
 clkx_z1 <=	clkx after 1 ns when rising_edge( clk );
@@ -199,30 +202,53 @@ end process;
 --end process;
 --
 
-fifo_i: cl_fifo_m12 
-	generic map(
-	    FIFO_WIDTH          => 16,     -- ширина FIFO
-	    FIFO_SIZE           => 64,     -- размер FIFO 
-	    FIFO_PAF            => 4,      -- уровень срабатывания флага PAF  
-	    FIFO_PAE            => 4       -- уровень срабатывания флага PAE  
- )
- port map(                
-     reset_p            => rstp,
-     clk_wr             => clk,
---     data_in            => data_i_rp,
---     data_en            => data_we_rp,
-     data_in            => data_i( 15 downto 0 ),
-     data_en            => data_we,
+--fifo_i: cl_fifo_m12 
+--	generic map(
+--	    FIFO_WIDTH          => 16,     -- ширина FIFO
+--	    FIFO_SIZE           => 64,     -- размер FIFO 
+--	    FIFO_PAF            => 4,      -- уровень срабатывания флага PAF  
+--	    FIFO_PAE            => 4       -- уровень срабатывания флага PAE  
+-- )
+-- port map(                
+--     reset_p            => rstp,
+--     clk_wr             => clk,
+----     data_in            => data_i_rp,
+----     data_en            => data_we_rp,
+--     data_in            => data_i( 15 downto 0 ),
+--     data_en            => data_we,
+--
+--     flag_wr            => fi_flag_wr,
+--     clk_rd             => clk,
+--     data_out           => fi_data,
+--     data_rd            => fi_fifo_rd,
+--     flag_rd            => fi_flag_rd
+--     
+--    );
+--	
 
-     flag_wr            => fi_flag_wr,
-     clk_rd             => clk,
-     data_out           => fi_data,
-     data_rd            => fi_fifo_rd,
-     flag_rd            => fi_flag_rd
-     
-    );
-	
-	
+pr_fifo_i: process( clk ) begin
+	if( rising_edge( clk ) ) then
+		if( rstp='1' ) then
+			fi_data_i <= (others=>'0') after 1 ns;
+		elsif( data_we='1' ) then
+			fi_data_i <= data_i( 15 downto 0 ) after 1 ns;
+		end if;
+		
+		if( rstp='1' or fi_fifo_rd='1' ) then
+			fi_flag_rd.ef <= '0' after 1 ns;
+		elsif( data_we='1' ) then
+			fi_flag_rd.ef <= '1' after 1 ns;
+		end if;
+
+		if( rstp='1' ) then 
+			fi_data <= (others=>'0') after 1 ns;
+		elsif( fi_fifo_rd='1' ) then
+			fi_data <= fi_data_i after 1 ns; 
+		end if;
+		
+	end if;
+end process;
+
 i2c_ack_z <= i2c_ack	after 1 ns when rising_edge( clk ); 	
 stp_rstp <= rstp or not i2c_ack_z after 1 ns when rising_edge( clk ); 	
 	
@@ -336,7 +362,7 @@ pr_stw: process( clk ) begin
 				tz_send_complete <= '0' after 1 ns;
 				fo_data_we <= '0' after 1 ns;
 				
-				if( tz_start_req='1' and  clk_step_1='1' ) then
+				if( tz_start_req='1' and  clk_step_0='1' ) then
 					stw <= s1 after 1 ns;
 				end if;		   
 				
@@ -357,7 +383,9 @@ pr_stw: process( clk ) begin
 					
 				
 			when s1 => -- START
-				sda_o <= '0' after 1  ns;  
+				if( clk_step_1='1' ) then
+					sda_o <= '0' after 1  ns;  
+				end if;
 				first_byte <= '1' after 1 ns;
 				cmd_ack <= '0' after 1 ns;
 				data_ack <= '0' after  1 ns;
@@ -494,25 +522,35 @@ fo_data_i( 7 downto 0 ) <= reg_shift_in( 8 downto 1 );
 fo_data_i( 11 downto 8 ) <= dataw_cnt;
 fo_data_i(12) <= data_ack;
 
-fifo_0: cl_fifo_m12 
-	generic map(
-	    FIFO_WIDTH          => 13,     -- ширина FIFO
-	    FIFO_SIZE           => 64,     -- размер FIFO 
-	    FIFO_PAF            => 4,      -- уровень срабатывания флага PAF  
-	    FIFO_PAE            => 4       -- уровень срабатывания флага PAE  
- )
- port map(                
-     reset_p            => rstp,
-     clk_wr             => clk,
-     data_in            => fo_data_i,
-     data_en            => fo_data_we_z,
-     --flag_wr            => fi_flag_wr,
-     clk_rd             => clk,
-     data_out           => fo_data_o,
-     data_rd            => fo_data_rd,
-     flag_rd            => fo_flag_rd
-     
-    );
+--fifo_0: cl_fifo_m12 
+--	generic map(
+--	    FIFO_WIDTH          => 13,     -- ширина FIFO
+--	    FIFO_SIZE           => 64,     -- размер FIFO 
+--	    FIFO_PAF            => 4,      -- уровень срабатывания флага PAF  
+--	    FIFO_PAE            => 4       -- уровень срабатывания флага PAE  
+-- )
+-- port map(                
+--     reset_p            => rstp,
+--     clk_wr             => clk,
+--     data_in            => fo_data_i,
+--     data_en            => fo_data_we_z,
+--     --flag_wr            => fi_flag_wr,
+--     clk_rd             => clk,
+--     data_out           => fo_data_o,
+--     data_rd            => fo_data_rd,
+--     flag_rd            => fo_flag_rd
+--     
+--    );	
+
+pr_fo_data_o: process( clk ) begin
+	if( rising_edge( clk ) ) then
+		if( rstp='1' ) then
+			fo_data_o <= (others=>'0') after 1 ns;
+		elsif( fo_data_we_z='1' ) then
+			fo_data_o <= fo_data_i after 1 ns;
+		end if;
+	end if;
+end process;
 
 data_rd_z <= data_rd after 1 ns when rising_edge( clk );
 fo_data_rd <= data_rd and not data_rd_z and fo_flag_rd.ef after 1 ns when rising_edge( clk );
@@ -522,7 +560,8 @@ fo_data_we_z <= fo_data_we after 1 ns when rising_edge( clk );
 data_o( 31 downto 16 ) <= x"12C0";
 data_o( 15 ) <= i2c_ack_z after 1 ns when rising_edge( clk );
 data_o( 14 ) <= state_tz after 1 ns when rising_edge( clk ); 
-data_o( 13 ) <= fo_flag_rd.hf and fi_flag_wr.hf after 1 ns when rising_edge( clk ); -- операции разрешены когда есть место в обоих FIFO
+--data_o( 13 ) <= fo_flag_rd.hf and fi_flag_wr.hf after 1 ns when rising_edge( clk ); -- операции разрешены когда есть место в обоих FIFO
+data_o( 13 ) <= not fi_flag_rd.ef after 1 ns when rising_edge( clk ); -- операции разрешены когда записанное слово ушло в сдвиговый регистр на передачу в I2C
 data_o( 12 downto 0 ) <= fo_data_o;
 
 end cl_i2c_burst;

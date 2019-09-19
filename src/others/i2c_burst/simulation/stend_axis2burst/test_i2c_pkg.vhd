@@ -225,11 +225,11 @@ type	type_arr		is array( 4 downto 0 ) of std_logic_vector( 31 downto 0 );
 
 variable	data_expect			: type_arr:=
 (			 
-		0   => x"12C0E1A2", 
-		1   => x"12C0F2A3", 
-		2   => x"12C0E3A5", 
-		3   => x"12C0E4FF", 
-		4   => x"12C0F5FF" 
+		0   => x"12C0C1A2", 
+		1   => x"12C0D2A3", 
+		2   => x"12C0C3A5", 
+		3   => x"12C0C4FF", 
+		4   => x"12C0D5FF" 
 );
 
 variable	L				: line;
@@ -246,6 +246,15 @@ variable	data			: std_logic_vector( 31 downto 0 );
 
 variable	error_i			: integer:=0;
 
+type		type_pkg		is array( 15 downto 0 ) of std_logic_vector( 31 downto 0 );
+variable	pkg_o			: type_pkg;
+variable	pkg_i			: type_pkg;
+
+variable	index_wr		: integer:=0;
+variable	index_rd		: integer:=0;
+variable	max_index_wr	: integer:=0;
+variable	max_index_rd	: integer:=0;
+
 begin		
 		data_o <= (others=>'0');
 		data_we <= '0';	 
@@ -253,39 +262,61 @@ begin
 	
 		wait until rising_edge( clk );	   
 		
---		write_reg( x"80018000", clk, data_o, data_we );
---		write_reg( x"C0A3C0A2", clk, data_o, data_we );
---		write_reg( x"C0A58004", clk, data_o, data_we );
---		write_reg( x"8007C006", clk, data_o, data_we );
 
-		write_reg( x"00008000", clk, data_o, data_we );
-		write_reg( x"00008001", clk, data_o, data_we );
-		
-		write_reg( x"0000C0A2", clk, data_o, data_we );
-		write_reg( x"0000C0A3", clk, data_o, data_we );
+--		write_reg( x"00008000", clk, data_o, data_we );
+--		write_reg( x"00008001", clk, data_o, data_we );
+--		
+--		write_reg( x"0000C0A2", clk, data_o, data_we );
+--		write_reg( x"0000C0A3", clk, data_o, data_we );
+--		write_reg( x"00008004", clk, data_o, data_we );
+--		write_reg( x"0000C0A5", clk, data_o, data_we );
+--		write_reg( x"0000C006", clk, data_o, data_we );
+--		write_reg( x"00008007", clk, data_o, data_we );
 
-		write_reg( x"00008004", clk, data_o, data_we );
-		write_reg( x"0000C0A5", clk, data_o, data_we );
+		pkg_o(max_index_wr):=x"00008001";  max_index_wr:=max_index_wr+1;
+		pkg_o(max_index_wr):=x"0000C0A2";  max_index_wr:=max_index_wr+1; max_index_rd:=max_index_rd+1;
+		pkg_o(max_index_wr):=x"0000C0A3";  max_index_wr:=max_index_wr+1; max_index_rd:=max_index_rd+1;
+		pkg_o(max_index_wr):=x"00008004";  max_index_wr:=max_index_wr+1;
+		pkg_o(max_index_wr):=x"0000C0A5";  max_index_wr:=max_index_wr+1; max_index_rd:=max_index_rd+1;
+		pkg_o(max_index_wr):=x"0000C006";  max_index_wr:=max_index_wr+1; max_index_rd:=max_index_rd+1;
+		pkg_o(max_index_wr):=x"00008007";  max_index_wr:=max_index_wr+1; max_index_rd:=max_index_rd+1;
+		pkg_o(max_index_wr):=x"00008001";  max_index_wr:=max_index_wr+1; 
 
-		write_reg( x"0000C006", clk, data_o, data_we );
-		write_reg( x"00008007", clk, data_o, data_we );
 
-
-		for ii in 0 to 4 loop
-			loop
+		loop
 				read_reg( data, clk, data_i, data_rd );
 				if( data( 11 downto 8 )/=dataw_cnt ) then
+					pkg_i(index_rd):=data_i; index_rd:=index_rd+1;
+					
 					dataw_cnt := dataw_cnt + 1;
+				end if;
+				
+				if( data_i(13)='1' ) then
+					write_reg( pkg_o(index_wr), clk, data_o, data_we ); index_wr:=index_wr+1;
+				end if;
+				
+				if( index_wr=max_index_wr and index_rd=max_index_rd ) then
 					exit;
 				end if;
-			end loop;  
+				
+		end loop;  
+		
+		loop
+				read_reg( data, clk, data_i, data_rd );
+				if( data_i(14)='0' ) then
+					exit;
+				end if;
 			
-			if( data=data_expect(ii) ) then	
-				fprint( output, L, "  %r   data: %r - Ok\n", fo(ii), fo(data) );
-				fprint(    log, L, "  %r   data: %r - Ok\n", fo(ii), fo(data) );
+		end loop;
+
+		for ii in 0 to 4 loop
+			
+			if( pkg_i(ii)=data_expect(ii) ) then	
+				fprint( output, L, "  %r   data: %r - Ok\n", fo(ii), fo(pkg_i(ii)) );
+				fprint(    log, L, "  %r   data: %r - Ok\n", fo(ii), fo(pkg_i(ii)) );
 			else
-				fprint( output, L, "  %r   data: %r  expect: %r - ERROR\n", fo(ii), fo(data), fo(data_expect(ii)) );
-				fprint(    log, L, "  %r   data: %r  expect: %r - ERROR\n", fo(ii), fo(data), fo(data_expect(ii)) );
+				fprint( output, L, "  %r   data: %r  expect: %r - ERROR\n", fo(ii), fo(pkg_i(ii)), fo(data_expect(ii)) );
+				fprint(    log, L, "  %r   data: %r  expect: %r - ERROR\n", fo(ii), fo(pkg_i(ii)), fo(data_expect(ii)) );
 				error_i:=error_i+1;
 			end if;
 			
