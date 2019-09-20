@@ -146,6 +146,7 @@ signal	dataw_cnt					: std_logic_vector( 3 downto 0 );
 signal	fo_data_we					: std_logic;
 signal	fo_data_we_z				: std_logic;
 signal	fo_data_i					: std_logic_vector( 12 downto 0 );
+signal	fo_data_i_z					: std_logic_vector( 12 downto 0 );
 signal	fo_flag_rd					: bl_fifo_flag;
 signal	fo_data_o					: std_logic_vector( 12 downto 0 );
 signal	fo_data_rd					: std_logic;
@@ -259,7 +260,7 @@ pr_stp: process( clk ) begin
 				tz_start_req <= '0' after 1 ns;
 				tz_stop_req <= '0' after 1 ns;
 				tz_send_req <= '0' after 1 ns;
-				if(  fi_flag_rd.ef='1' ) then
+				if(  fi_flag_rd.ef='1'  and fo_flag_rd.hf='1' ) then -- передача начинается когда есть данные во входном регистре и место в выходном регистре
 					fi_fifo_rd <= '1' after 1 ns;
 					stp <= s1 after 1 ns;
 				end if;
@@ -542,18 +543,41 @@ fo_data_i(12) <= data_ack;
 --     
 --    );	
 
-pr_fo_data_o: process( clk ) begin
+pr_fo_data_i_z: process( clk ) begin
 	if( rising_edge( clk ) ) then
 		if( rstp='1' ) then
-			fo_data_o <= (others=>'0') after 1 ns;
+			fo_data_i_z <= (others=>'0') after 1 ns;
 		elsif( fo_data_we_z='1' ) then
-			fo_data_o <= fo_data_i after 1 ns;
+			fo_data_i_z <= fo_data_i after 1 ns;
 		end if;
 	end if;
 end process;
 
+pr_fo_data_o: process( clk ) begin
+	if( rising_edge( clk ) ) then
+		if( rstp='1' ) then
+			fo_data_o <= (others=>'0') after 1 ns;
+		elsif( fo_data_rd='1' ) then
+			fo_data_o <= fo_data_i_z after 1 ns;
+		end if;
+	end if;
+end process;	  
+
+pr_fo_flag_hf: process( clk )  begin
+	if( rising_edge( clk ) ) then
+		if( rstp='1' or fo_data_rd='1' ) then
+			fo_flag_rd.hf <= '1' after 1 ns;
+		elsif( fo_data_we_z='1' ) then
+			fo_flag_rd.hf <= '0' after 1 ns;
+		end if;
+	end if;
+end process;
+	
+fo_flag_rd.ef <= not fo_flag_rd.hf after 1 ns when rising_edge( clk ); -- это нужно что бы исключить одновременное появление fo_data_rd и fo_data_we_z
+
 data_rd_z <= data_rd after 1 ns when rising_edge( clk );
 fo_data_rd <= data_rd and not data_rd_z and fo_flag_rd.ef after 1 ns when rising_edge( clk );
+--fo_data_rd <= data_rd and not data_rd_z after 1 ns when rising_edge( clk );
 
 fo_data_we_z <= fo_data_we after 1 ns when rising_edge( clk );
 

@@ -227,7 +227,7 @@ variable	data_expect			: type_arr:=
 (			 
 		0   => x"12C0C1A2", 
 		1   => x"12C0D2A3", 
-		2   => x"12C0C3A5", 
+		2   => x"12C0E3A5", 
 		3   => x"12C0C4FF", 
 		4   => x"12C0D5FF" 
 );
@@ -286,6 +286,10 @@ begin
 		loop
 				read_reg( data, clk, data_i, data_rd );
 				if( data( 11 downto 8 )/=dataw_cnt ) then
+					
+					if( dataw_cnt="0010" ) then
+						wait for 50 us; -- моделирование задержки чтения
+					end if;
 					pkg_i(index_rd):=data_i; index_rd:=index_rd+1;
 					
 					dataw_cnt := dataw_cnt + 1;
